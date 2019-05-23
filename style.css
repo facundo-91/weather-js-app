@@ -1,0 +1,28 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+#weather-main {
+	margin: 4rem 0;
+}
+#weather-city {
+	font-size: 2rem;
+}
+#weather-temp {
+	font-size: 6rem;
+	font-weight: bold;
+}
+#weather-description {
+	font-size: 1.3rem;
+	display: inline-block;
+}
+#weather-icon-holder {
+	display: inline-block;
+}
+#weather-icon {
+	vertical-align: middle;
+}
+#weather-pressure, #weather-humidity {
+	font-size: 1.3rem;
+}
