@@ -1,6 +1,7 @@
 // Selectors
 let searchInput = document.querySelector('#search-input');
 let searchButton = document.querySelector('#search-btn');
+let weatherMain = document.querySelector('#weather-main');
 let weatherCity = document.querySelector('#weather-city');
 let weatherTemp = document.querySelector('#weather-temp');
 let weatherDescription = document.querySelector('#weather-description');
@@ -18,7 +19,7 @@ function fetchWeather() {
 	request.open('GET', url, true);
 	// Function when request completes
 	request.onload = function() {
-		if (this.status == 200) {
+		if (this.status === 200) {
 			let response = JSON.parse(this.responseText);
 			weatherCity.innerHTML = response.name + ", " + response.sys.country;
 			weatherIcon.src = "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
@@ -35,6 +36,12 @@ function fetchWeather() {
 	request.send();
 	// Clear input after search
 	searchInput.value = '';
+	// Change the display property of the div
+	if (weatherMain.style.display === 'none') {
+		weatherMain.style.display = 'block';
+	} else {
+		weatherMain.style.display = 'none';
+	}
 }
 
 // Events Listeners
