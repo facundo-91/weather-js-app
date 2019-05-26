@@ -22,7 +22,7 @@ function fetchWeather() {
 		if (this.status === 200) {
 			let response = JSON.parse(this.responseText);
 			weatherCity.innerHTML = response.name + ", " + response.sys.country;
-			weatherIcon.src = "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
+			weatherIcon.src = "https://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
 			weatherIcon.alt = response.weather[0].description;
 			weatherTemp.innerHTML = Math.round(response.main.temp) + "ºC";
 			weatherDescription.innerHTML = response.weather[0].main;
