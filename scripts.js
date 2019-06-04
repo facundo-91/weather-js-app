@@ -28,26 +28,21 @@ function fetchWeather() {
 			weatherDescription.innerHTML = response.weather[0].main;
 			weatherPressure.innerHTML = "Pressure: " + Math.round(response.main.pressure) + " hPa";
 			weatherHumidity.innerHTML = "Humidity: " + response.main.humidity + " %";
+			weatherMain.style.display = 'block';
 		} else if (this.status === 404) {
-			alert('City Name not Found');
+				alert('City Name not Found');
 		}
 	}
 	// Send request
 	request.send();
 	// Clear input after search
 	searchInput.value = '';
-	// Change the display property of the div
-	if (weatherMain.style.display === 'none') {
-		weatherMain.style.display = 'block';
-	} else {
-		weatherMain.style.display = 'none';
-	}
 }
 
 // Events Listeners
 searchButton.addEventListener('click', fetchWeather);
 searchInput.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') {
-        fetchWeather();
+	if (e.key === 'Enter') {
+		fetchWeather();
 	}
 });
