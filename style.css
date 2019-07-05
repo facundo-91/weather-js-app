@@ -6,12 +6,15 @@ html, body {
 	font-family: 'Roboto', sans-serif;
 }
 .title {
-	font-size: 3.2rem;
-	font-weight: bold;
-	text-transform: uppercase;
-	color: #fff;
 	background-color: rgba(0, 0, 0, 0.75);
 	margin: 2rem 0;
+}
+.title p {
+	font-size: 3rem;
+	font-weight: 400;
+	text-transform: uppercase;
+	color: #fff;
+	margin: 0 .5rem;
 }
 #search-input {
 	height: 1.5rem;
